@@ -2,6 +2,15 @@
 ##### By: Jacob Ridlinghafer
 ###### 9/14/2020
 
+---
+# Grade
+
+3/3 - Wow really great job! I love your graphs.
+
+One small request - you only need to include the md file and the final python script and any supporting images in your submission folder. You can keep the other codes in your working directory that way its easy for me to see what to look at :) 
+
+---
+
 To create my predictions I made a list of flow values for each week by first creating an empty list for that week then appendending values from a range of days in the month, I also controlled the list values by limiting the upper bound of flows to be 600 cfs as to mitigate large spikes and because this year has been extremely dry, and is predicted to be dryer this winter as well. Then I created a new list with the mean, the minimum, and standard deviations of each weeks values. I plotted the minimums and mean by week with all the years data, pre-2000, and post 2010. The first thing to note is that the gap is much larger between the average and minimum, along with larger standard deviations in the first 8 weeks of the 16 week period. So, I thought using the average flow for the first 8 weeks would be too high as the weeks leading up to the start of the semster had lower flow than normal. This lead me to make a new list that is the mid-point between the mean and minimum and applied this to the first 8 weeks of the list and the last 8 weeks using the average since the standard deviation is not as great. For a low flow year like this year I decided the post-2010 data was the best representation of this year, so that was used for my submitted forcast values (Figure 1).
 ![Figure 1](Discharge_prediction_2010+.png "Weekly prediction")
 

@@ -100,41 +100,101 @@ week14: 11/22-11/28
 week15: 11/29-12/5
 week16: 12/6-12/12
 #%%
-mean_2020_summer= np.mean(flow_data[(flow_data[:,0] ==2020) & (flow_data[:,1]==6) & (flow_data[:,1]==7) & (flow_data[:,1]==8),3])
-mean_summer = np.mean(flow_data[(flow_data[:,0] <=2019) & (flow_data[:,1]==6) & (flow_data[:,1]==7) & (flow_data[:,1]==8),3])
-mean_summer_difference= mean_2020_summer/ mean_summer
+
 Week1_mean = np.mean(flow_data[(flow_data[:,1]==8) & (flow_data[:,2] >= 23) & (flow_data[:,2] <= 29), 3])
 Week2_mean = np.mean(flow_data[(flow_data[:,1]==8) & (flow_data[:,2] >= 30) & (flow_data[:,2] <= 31), 3])
 Week2_mean_2 = np.mean(flow_data[(flow_data[:,1]==9) & (flow_data[:,2] >= 0) & (flow_data[:,2] <= 5), 3])
-Week2_mean= (Week2_mean + Week2_mean_2)/2
+Week2_mean= (Week2_mean*2 + Week2_mean_2*5)/7
 
 Week3_mean = np.mean(flow_data[(flow_data[:,1]==9) & (flow_data[:,2] >= 6) & (flow_data[:,2] <= 12), 3])
 Week4_mean = np.mean(flow_data[(flow_data[:,1]==9) & (flow_data[:,2] >= 13) & (flow_data[:,2] <= 19), 3])
 Week5_mean = np.mean(flow_data[(flow_data[:,1]==9) & (flow_data[:,2] >= 20) & (flow_data[:,2] <= 26), 3])
 Week6_mean = np.mean(flow_data[(flow_data[:,1]==9) & (flow_data[:,2] >= 27) & (flow_data[:,2] <= 30), 3])
 Week6_mean_2 = np.mean(flow_data[(flow_data[:,1]==10) & (flow_data[:,2] >= 0) & (flow_data[:,2] <= 3), 3])
-Week6_mean= (Week6_mean + Week6_mean_2)/2
+Week6_mean= (Week6_mean*4 + Week6_mean_2*3)/7
 
 Week7_mean = np.mean(flow_data[(flow_data[:,1]==10) & (flow_data[:,2] >= 4) & (flow_data[:,2] <= 10), 3])
 Week8_mean = np.mean(flow_data[(flow_data[:,1]==10) & (flow_data[:,2] >= 11) & (flow_data[:,2] <= 17), 3])
 Week9_mean = np.mean(flow_data[(flow_data[:,1]==10) & (flow_data[:,2] >= 18) & (flow_data[:,2] <= 24), 3])
 Week10_mean = np.mean(flow_data[(flow_data[:,1]==10) & (flow_data[:,2] >= 25) & (flow_data[:,2] <= 31), 3])
-Week11_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 0) & (flow_data[:,2] <= 6), 3])
-Week12_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 7) & (flow_data[:,2] <= 13), 3])
-Week13_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 14) & (flow_data[:,2] <= 20), 3])
-Week14_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 21) & (flow_data[:,2] <= 27), 3])
-Week15_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 28) & (flow_data[:,2] <= 30), 3])
+Week11_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 1) & (flow_data[:,2] <= 7), 3])
+Week12_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 8) & (flow_data[:,2] <= 14), 3])
+Week13_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 15) & (flow_data[:,2] <= 21), 3])
+Week14_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 22) & (flow_data[:,2] <= 28), 3])
+Week15_mean = np.mean(flow_data[(flow_data[:,1]==11) & (flow_data[:,2] >= 29) & (flow_data[:,2] <= 30), 3])
 Week15_mean_2 = np.mean(flow_data[(flow_data[:,1]==12) & (flow_data[:,2] >= 0) & (flow_data[:,2] <= 5), 3])
-Week15_mean= (Week15_mean + Week15_mean_2)/2
+Week15_mean= (Week15_mean*2 + Week15_mean_2*5)/7
 
 Week16_mean = np.mean(flow_data[(flow_data[:,1]==12) & (flow_data[:,2] >= 6) & (flow_data[:,2] <= 12), 3])
 
 
 # %%
-mean_2020_summer_1= np.mean(flow_data[(flow_data[:,0] ==2020) & (flow_data[:,1]==6),3])
-mean_2020_summer_2= np.mean(flow_data[(flow_data[:,0] ==2020) & (flow_data[:,1]==7),3])
-mean_2020_summer_3= np.mean(flow_data[(flow_data[:,0] ==2020) & (flow_data[:,1]==8),3])
-mean_summer_1 = np.mean(flow_data[(flow_data[:,0] <=2019) & (flow_data[:,1]==6) & (flow_data[:,1]==7) & (flow_data[:,1]==8),3])
-mean_summer_2 = np.mean(flow_data[(flow_data[:,0] <=2019) & (flow_data[:,1]==6) & (flow_data[:,1]==7) & (flow_data[:,1]==8),3])
-mean_summer_3 = np.mean(flow_data[(flow_data[:,0] <=2019) & (flow_data[:,1]==6) & (flow_data[:,1]==7) & (flow_data[:,1]==8),3])
-mean_summer_difference= mean_2020_summer/ mean_summer
+mean_2020_summer_1= np.mean(flow_data[(flow_data[:,0] ==2020) & (flow_data[:,1]==6) & (flow_data[:,2] <= 21),3])
+mean_2020_summer_2= np.mean(flow_data[(flow_data[:,0] ==2020) & (flow_data[:,1]==7) & (flow_data[:,2] <= 21),3])
+mean_2020_summer_3= np.mean(flow_data[(flow_data[:,0] ==2020) & (flow_data[:,1]==8) & (flow_data[:,2] <= 21),3])
+mean_2020_summer=(mean_2020_summer_1 + mean_2020_summer_2 + mean_2020_summer_3)/3
+mean_summer_1 = np.mean(flow_data[(flow_data[:,0] <=2019) & (flow_data[:,1]==6) & (flow_data[:,2] <= 21),3])
+mean_summer_2 = np.mean(flow_data[(flow_data[:,0] <=2019) & (flow_data[:,1]==7) & (flow_data[:,2] <= 21),3])
+mean_summer_3 = np.mean(flow_data[(flow_data[:,0] <=2019) & (flow_data[:,1]==8) & (flow_data[:,2] <= 21),3])
+mean_summer=(mean_summer_1 + mean_summer_2 + mean_summer_3)/3
+mean_summer1_fraction= mean_2020_summer_1/ mean_summer_1
+mean_summer2_fraction= mean_2020_summer_2/ mean_summer_2
+mean_summer3_fraction= mean_2020_summer_3/ mean_summer_3
+mean_summer_fraction= mean_2020_summer/ mean_summer
+print(mean_summer_fraction)
+print(mean_summer1_fraction)
+print(mean_summer2_fraction)
+print(mean_summer3_fraction)
+# %%
+week1= Week1_mean*mean_summer3_fraction
+week2= Week2_mean*mean_summer3_fraction
+week3= Week3_mean*mean_summer3_fraction
+week4= Week4_mean*mean_summer3_fraction
+week5= Week5_mean*mean_summer3_fraction
+week6= Week6_mean*mean_summer_fraction
+week7= Week7_mean*mean_summer_fraction
+week8= Week8_mean*mean_summer_fraction
+week9= Week9_mean*mean_summer_fraction
+week10= Week10_mean*mean_summer_fraction
+week11= Week11_mean*mean_summer_fraction
+week12= Week12_mean*mean_summer_fraction
+week13= Week13_mean*mean_summer_fraction
+week14= Week14_mean*mean_summer_fraction
+week15= Week15_mean*mean_summer_fraction
+week16= Week16_mean*mean_summer_fraction
+
+weeklypred= []
+
+weeklypred.append(week1)
+weeklypred.append(week2)
+weeklypred.append(week3)
+weeklypred.append(week4)
+weeklypred.append(week5)
+weeklypred.append(week6)
+weeklypred.append(week7)
+weeklypred.append(week8)
+weeklypred.append(week9)
+weeklypred.append(week10)
+weeklypred.append(week11)
+weeklypred.append(week12)
+weeklypred.append(week13)
+weeklypred.append(week14)
+weeklypred.append(week15)
+weeklypred.append(week16)
+print(weeklypred)
+# %%
+weeks= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+#%%
+%matplotlib inline
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-whitegrid')
+import numpy as np
+
+plt.scatter(x=weeks, y=weeklypred, marker='o', label='predicted flow');
+plt.xlabel('Week (#)')
+plt.ylabel('Flow (cfs)');
+plt.ylim([0, 150])
+plt.title('Weekly Discharge Prediction');
+plt.legend()
+plt.savefig('Discharge_Prediction.png')
+# %%

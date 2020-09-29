@@ -2,6 +2,13 @@
 ##### By: Jacob Ridlinghafer
 ###### 9/28/2020
 
+__
+## Grade
+3/3 - Great work again! Love your graphs. We are going to work more on plotting this week.
+
+Note - I'm having some trouble seeing your graphs correctly in the Markdown preview. None of them show up in Atom and only some show up online.  Can you try using the atom plugin listed in the homework instead? 
+__
+
 
 First I created a weekly boxplot distribution containing all data for those weeks(Figure 1), this seemed too broad to me so I analysed the yearly changes in a new data frame (yearly) from june - august 21st  because the summer is the part most affecting this drought. I grouped these by flow and described by year (code: x=yearly.groupby('year')['flow'].describe()). I found while looking at the table that I could use 2011-2019 but would rather not use data in 2017 and 2019 because they either had too high of a mean or a great standard deviation. I plotted weekly data using these years in a box plot (Figure 2) and saw that the data looks more uniform and compact at a lower flow value. The means of all these years was much too high because we are in a drought so I decided to find a mean quantile # that matched the mean 2020 flow for this period (june - august 21st). I found x3=yearly.groupby('year')['flow'].quantile(0.11).mean() to be extremely close to the mean of 47 cfs. so applied this to every week in the time period and got a nice looking plot that see Figure 3 that matches initially the flows of 40-60 cfs that we saw leading up to the first week of the semester in 2020.
 
@@ -20,7 +27,7 @@ As, for my two-week forcast I utilized the same technique but I had a month extr
 What are the column names?
 first is 'flow', 'year', 'month', 'day' and 'datetime' we also have 'agency_cd', 'site_no', and 'code' which were not utilised.
 What is its index?
-index is the position that python recognizes as starting at 0, each index location is specified as a reading on a specific date. 
+index is the position that python recognizes as starting at 0, each index location is specified as a reading on a specific date.
 What data types do each of the columns have?
 
 ![Figure 4](dtypes.png "datatypes")

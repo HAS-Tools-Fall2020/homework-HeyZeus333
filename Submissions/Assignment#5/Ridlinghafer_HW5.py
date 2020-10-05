@@ -222,6 +222,15 @@ Q4= data.sort_values('flow')
 Q4_a= Q4.head(5)
 Q4_b= Q4.tail(5)
 Q6= data[(data.flow >= .95*week_q1) & (data.flow <= 1.05*week_q1)]
+Q5max_index= data.groupby('month')['flow'].idxmax()
+Q5max= data.groupby('month')['flow'].max()
+Q5max_y= data.year.iloc[Q5max_index]
+print([Q5max_y,Q5max])
+Q5min_index= data.groupby('month')['flow'].idxmin()
+Q5min= data.groupby('month')['flow'].min()
+Q5min_y= data.year.iloc[Q5min_index]
+print([Q5min_y,Q5min])
+
 # %%
 # from pandas import DataFrame
 # monthly = pd.DataFrame(columns = ["month","flow","year"])
@@ -315,4 +324,8 @@ week_q7 = week7.flow.quantile(0.0)
 #multiplies by percent error
 print(percent_error*week_q6)
 print(percent_error*week_q7)
+#%%
+data.dtypes
 
+
+# %%

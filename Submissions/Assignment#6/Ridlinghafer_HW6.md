@@ -2,8 +2,11 @@
 ##### By: Jacob Ridlinghafer
 ###### 10/5/2020
 
+___
+### Grade
+3/3 - great work, very thorough analysis and nice graphs!
 
-
+___
 
 First, I created a boxplot with all data from August- December then I truncated the y axis to find the value where outliers begin I found this value to be 335 cfs (Figure 1), I decided I would find a way to ommitt this data. I found updating the flow_weekly data frame to be best and instantly the r^2 (correlation) changed from 0.47 to 0.67. Next, I created 4 time lagged series and made my training period from 2010-2015 and the testing period from 2015-present I did this to have data that are more similar to modern conditions. I also decided to make models all the way from have 1 - 4 time lagged series I found 3 to be the magic number when making my 16 week forecast with a correlation of 0.7. I then created a for loop that could project the data into the future I chose 16 but always experimented with more like 1000 and the model always converged meaning it's not an oscillating model which makes sense because at it's heart it's a linear equation. Next I created four plots the first was to show where testing, and training periods(Figure 2). The second graph was zoomed in on the training period and plotted with observed flow, the third was the same but for the testing portion (Figure 3 & 4) they both showed they followed the observed flow quite well. Fourth was the AR model compared with a scatter of t vs t-1 points it seemed to be fairly concentrated on the line (Figure 5). The last was my 16 week projection of the data into the future (Figure 6)
 
@@ -62,4 +65,4 @@ As, for my two-week forcast I utilized the same technique but, I used the four t
 
 3. Finally, provide discussion on what you actually used for your forecast. Did you use your AR model, why or why not? If not how did you generate your forecast this week?
 
-  I did use this model because I think it has potential for a 16 week forecast and especially the 2 week forecast because it has a correlation of 0.7 which is very good for a dynamic system. If this were a normal year I think the prediction would be great although it is hot and dry and likely to be a little lower (5-10 cfs) than my prediction of 67.3, and 78.2 cfs respectively. 
+  I did use this model because I think it has potential for a 16 week forecast and especially the 2 week forecast because it has a correlation of 0.7 which is very good for a dynamic system. If this were a normal year I think the prediction would be great although it is hot and dry and likely to be a little lower (5-10 cfs) than my prediction of 67.3, and 78.2 cfs respectively.

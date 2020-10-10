@@ -27,3 +27,7 @@ data_frame[data_frame == 999] = np.nan
 # 2) Turn the 999 values back to nas. See how many different ways you can do this
 
 # %%
+Given the following series of flow values and days Assume that the flow has uncertainty of +/- 25%
+Come up with a way to visualize this information
+flow = np.random.randn(100)
+day = range(len(y_data))

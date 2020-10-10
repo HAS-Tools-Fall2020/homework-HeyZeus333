@@ -98,10 +98,10 @@ data['month'] = data['month'].astype(int)
 data['day'] = data['day'].astype(int)
 
 # %%
-yearly = {}
+# yearly = {}
 #yearly = []
 for i in range(1990,2021):
-    yearly['%d'%i] = [data.flow[(data.year == i)]]
+    yearly['%s'%i] = [data.flow[('year'[] == i)]]
     # year = [yearly.get('%i'%i)]
 # print(yearly)
 
@@ -110,9 +110,77 @@ yearly = pd.DataFrame.from_dict(yearly, orient='index', columns= ['2020'])
 # %%
 import concat from pandas
 #%%
-yearly.dtypes
+#yearlytest = yearly.astype(str)
+yearlytest= yearlytest.astype(int)
 #%%
 #yearlytest['2020'] = yearly['2020'].astype(int)
-yearly.to_excel(r'C:\Course_Materials\Yearly.xlsx', index = False)
+yearly.to_excel(r'C:\Course_Materials\Yearly1.xlsx', index = False)
 
 # %%
+data2= data.copy()
+
+for i in range(1989,2021):
+    data2['%i'%i] = data.flow[data.year == i]
+#%%
+myguess = 3
+if myguess == 3:
+        print(f"let's see what's behind door # {myguess} you were incorrect")
+else:
+        print(f"let's see what's behind door # {myguess} you are a winnner")
+# %%
+myguess = input('which door would you like to choose')
+myguess = int(myguess)
+if myguess == 3:
+        print(f"let's see what's behind door # {myguess} you were incorrect")
+else:
+        print(f"let's see what's behind door # {myguess} you are a winnner")
+#%%
+#%%
+# data2= data.copy()
+# months = []
+
+# for i in range(1,13):
+#     data2['%i'%i] = data.flow[data.month == i].dropna()
+#     months.append('%i'%i)
+    
+#%%
+# data_to_plot = [ data2['7'].dropna(), data2['8'].dropna(), data2['9'].dropna(), data2['10'].dropna(), data2['11'].dropna(), data2['12'].dropna()]
+
+# fig = plt.figure(1, figsize=(9, 6))
+
+# # Create an axes instance
+# ax = fig.add_subplot(111)
+
+# # Create the boxplot
+# bp = ax.boxplot(data_to_plot)
+# plt.ylim([0, 500])
+# plt.title('Discharge Boxplot');
+# ax.set_xticklabels(months[6:])
+# # plt.xticks(rotation=45,fontsize=12)
+# fig.savefig('BoxPlots.png', bbox_inches='tight')
+#%%
+#%%
+
+# from mpl_toolkits.mplot3d import Axes3D
+# import matplotlib.pyplot as plt
+
+
+
+# fig = plt.figure()
+# ax = fig.add_subplot(111, projection='3d')
+
+# x =train['flow']
+# y = train['flow_tm1']
+# z =train['flow_tm2']
+
+# my_cmap = plt.get_cmap('hsv')
+
+# x5= ax.scatter(x, y, z, c= (x+y+z), cmap = my_cmap, marker='o')
+
+
+# fig.colorbar(x5, ax = ax, shrink = 0.5, aspect = 5)
+# ax.set_xlabel('flow t')
+# ax.set_ylabel('flow t-1')
+# ax.set_zlabel('flow t-2')
+
+# plt.show()

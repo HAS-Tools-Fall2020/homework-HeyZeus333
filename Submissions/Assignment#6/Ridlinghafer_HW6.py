@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 import datetime
 from scipy import stats
-#note you may need to do pip install for sklearn
+# note you may need to do pip install for sklearn
 
 # %%
 # ** MODIFY **
@@ -22,11 +22,11 @@ print(filepath)
 
 
 # %%
-#Read the data into a pandas dataframe
-data=pd.read_table(filepath, sep = '\t', skiprows=30,
-        names=['agency_cd', 'site_no', 'datetime', 'flow', 'code'],
-        parse_dates=['datetime']
-        )
+# Read the data into a pandas dataframe
+data = pd.read_table(filepath, sep ='\t', skiprows=30,
+    names = ['agency_cd', 'site_no', 'datetime', 'flow', 'code'],
+    parse_dates=['datetime']
+    )
 
 # Expand the dates to year month day
 data['year'] = pd.DatetimeIndex(data['datetime']).year
@@ -36,7 +36,7 @@ data['dayofweek'] = pd.DatetimeIndex(data['datetime']).dayofweek
 
 # Aggregate flow values to weekly 
 flow_weekly = data.resample("W", on='datetime').mean()
-#%%
+# %%
 # box plot showing me location of outliers from month 8 to 12
 data_to_plot = [data.flow[(data.month >= 8)]]
 
@@ -48,11 +48,12 @@ ax = fig.add_subplot(111)
 # Create the boxplot
 bp = ax.boxplot(data_to_plot)
 plt.ylim([0, 335])
-plt.title('Discharge Boxplot August-December');
+plt.title('Discharge Boxplot August-December')
 fig.savefig('Discharge_Boxplot_Aug-Dec.png', bbox_inches='tight')
-#%%
+# %%
 # making model ignore flow values that are considered outliers if this isn't done the prediction on the later weeks are far to high
-flow_weekly = flow_weekly[(flow_weekly.flow <= 335)]
+flow_weekly = flow_weekly[
+        (flow_weekly.flow <= 335)]
 # flow_weekly = flow_weekly
 
 # %%

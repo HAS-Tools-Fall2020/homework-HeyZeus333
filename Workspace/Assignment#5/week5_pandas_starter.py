@@ -315,4 +315,5 @@ week_q7 = week7.flow.quantile(0.0)
 #multiplies by percent error
 print(percent_error*week_q6)
 print(percent_error*week_q7)
+#%%
 

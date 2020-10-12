@@ -9,7 +9,7 @@ is changed to where you keep it and to 'streamflow_week7.txt' so you get this as
 - Week 2 forecast submission values: 82.82 cfs
 
 
-# Reviewer: Lourdes Fierro
+### Reviewer: Lourdes Fierro
 
 ## Forecast values
 - Week 1 forecast regression based: 74.019 cfs

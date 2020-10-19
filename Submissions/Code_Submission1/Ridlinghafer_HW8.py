@@ -1,6 +1,3 @@
-# Starter code for week 6 illustrating how to build an AR model
-# and plot it
-
 # %%
 # Import the modules we will use
 import os

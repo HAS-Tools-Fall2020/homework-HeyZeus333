@@ -184,3 +184,25 @@ else:
 # ax.set_zlabel('flow t-2')
 
 # plt.show()
+# %%
+# predictions over time
+forecasts_1=np.zeros([nstudent,len(weeks)])
+forecasts_2=np.zeros([nstudent,len(weeks)]) # The 2week forecasts for this week
+
+for i in range(nstudent):
+    filename = names[i] + '.csv'
+    filepath = os.path.join('..', 'forecast_entries', filename)
+    print(filepath)
+    temp = pd.read_csv(filepath, index_col='Forecast #')
+    for n in range(1, forecast_week+1):
+        forecasts_1[i,n-1] = temp.loc[(n), '1week']
+        forecasts_2[i,n-1] = temp.loc[(n), '2week']
+
+# %%
+# compiled into data frames you can use for graphing
+weekly_forecast1w = pd.DataFrame({}, index=firstnames)
+weekly_forecast2w = pd.DataFrame({}, index=firstnames)
+
+for i in range(16):
+    weekly_forecast1w.insert(i,'week_%s'%(i+1), forecasts_1[:,i], True)
+    weekly_forecast2w.insert(i,'week_%s'%(i+1), forecasts_2[:,i], True)

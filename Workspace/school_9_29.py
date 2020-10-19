@@ -27,7 +27,19 @@ data_frame[data_frame == 999] = np.nan
 # 2) Turn the 999 values back to nas. See how many different ways you can do this
 
 # %%
-Given the following series of flow values and days Assume that the flow has uncertainty of +/- 25%
-Come up with a way to visualize this information
-flow = np.random.randn(100)
-day = range(len(y_data))
+# Given the following series of flow values and days Assume that the flow has uncertainty of +/- 25%
+# Come up with a way to visualize this information
+# flow = np.random.randn(100)
+# day = range(len(y_data))
+
+# %%
+# Given the following dataframe:
+data = np.random.rand(4, 5)
+ans=[]
+# Write a function and use it to calculate the mean of every colum
+# If you have time try doing it with and without a for loop
+for i in range(4):
+    ans.append(data[:,i].mean())
+
+
+# %%

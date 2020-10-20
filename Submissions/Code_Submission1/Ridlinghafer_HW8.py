@@ -56,10 +56,13 @@ flow_weekly = flow_weekly[
 # %%
 # creation of lag timed series
 # the loop names each column flow_tm%i and shifts it by i
+# LC - nice job using a loop
 for i in range(1, 5):
     flow_weekly['flow_tm%s' % i] = flow_weekly['flow'].shift(i)
 
 # making my training period 2010-2015
+# LC - it woudl be good to define these numbers as variables
+# especially since the second one is repeated. 
 train = flow_weekly[940:1170][['flow', 'flow_tm1',
                                'flow_tm2', 'flow_tm3', 'flow_tm4']]
 # making testing from 2015-2020
@@ -96,6 +99,7 @@ lastweek = [flow_weekly.flow[-1]]
 # empty list for predictions
 weeklypred_4 = []
 
+# LC - nice work combining this into one analysis for the 1 and 2 week. 
 for i in range(2):
     wk1 = lastweek[i]
     wk2 = lastweekx2[i]
@@ -217,7 +221,8 @@ q_90 = sub.quantile(0.90)
 # This is done to see how the next 2 weeks flow compare
 # to the end of October in prior years
 
-
+# LC - Next time put your funciton at the top of the script
+# and dont forget to add docstrings. 
 def lo_hi(prediction):
     flow_str = []
     for num in prediction:

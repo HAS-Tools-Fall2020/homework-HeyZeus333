@@ -2,6 +2,8 @@
 ##### By: Jacob Ridlinghafer
 ###### 11/16/2020
 
+## Grade
+3/3 - nice job 
 
 Figure 1: Box plot that that shows temperatures for months August - December (2015- 2020)
 

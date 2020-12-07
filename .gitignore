@@ -127,3 +127,23 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+data/WBD_15_HU2_GBD/WBD_15_HU2_GDB.gdb/
+
+data/WBD_15_HU2_GDB.gdb/
+
+data/GOVTUNIT_Arizona_State_GDB.gdb/
+
+data/WBD_15_HU2_GBD/
+
+*.zip
+
+Workspace/Assignment#10/BoxPlots.png
+
+Workspace/Assignment#10/Discharge_Prediction.png
+
+Workspace/Assignment#10/Week12_Forecast_Netcdf_starter.py
+
+Workspace/Assignment#10/Week12_Reanalysis_Netcdf_starter.py
+
+Workspace/school_9_29.py

@@ -2,6 +2,8 @@
 ##### By: Jacob Ridlinghafer
 ###### 12/07/2020
 
+#### Grade
+3/3 - Nice work, glad you got it working.  These are great questions, hopefully we have time we can discuss them tomorrow. The short answer is that running a single for loop wont go much faster on these machines if you are just running on one core. It will just be the speed difference between that processor and whatever you have on your laptop. To get big speedups you need to divide your code up so it can run in parallel -- i.e. dividing the work up among multiple cores.  Also the exception to this is that running on one GPU can be much faster than running on one CPU if you have something that is optimized to take advantage of it. 
 
 #Questions
 
